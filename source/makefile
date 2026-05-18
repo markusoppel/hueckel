@@ -14,7 +14,7 @@ FC= gfortran
 FOPT= -O2  
 LIB=-llapack -lblas
 
-OBJ= hueckel.o  readinput.o writeresult.o global.o molecule.o
+OBJ= hueckel.o  readinput.o writeresult.o writemolden.o global.o molecule.o
 
 
 hueckel.x: $(OBJ)

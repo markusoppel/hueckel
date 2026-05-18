@@ -21,7 +21,7 @@ integer,parameter::lwork=3*maxatoms-1
 real(kind=8)::work(lwork)
 
 alpha=0.0
-beta=1.0
+beta=-1.0
 dmax=1.4
 ncarbon=0
 
@@ -57,6 +57,7 @@ endif
 
 
 call writeresult(title,hmatrix,eigval,ncarbon)
+call writemolden(title,hmatrix,eigval,ncarbon)
 
 
 end program hueckel
