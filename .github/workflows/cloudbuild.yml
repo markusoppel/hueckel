@@ -1,0 +1,5 @@
+
+steps:
+- name: 'bash'
+  args: ['cd source && make']
+
