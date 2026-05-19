@@ -28,6 +28,6 @@ jobs:
         cd source
         make
         cd ../test
-        ../source/hueckel.x  ethylene.xyz 
+        ../source/hueckel.x ethylene.xyz 
         cat ethylene.out
         grep "Happy landing" ethylene.out
