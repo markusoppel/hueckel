@@ -10,9 +10,11 @@
 ! LICENSE or in <http://www.gnu.org/licenses/>.                        !
 !                                                                      !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Global constants shared across all modules.
 module global
 
+! Maximum number of atoms the program can handle (also max matrix dimension).
 integer,parameter::maxatoms=100
-
 
 end module global

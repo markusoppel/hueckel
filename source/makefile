@@ -9,23 +9,29 @@
 # LICENSE or in <http://www.gnu.org/licenses/>.                        #
 ########################################################################
 
+# Fortran compiler and flags
 FC= gfortran
 #FOPT=    -fpp -O2  -g -qopenmp -mkl
 FOPT= -O2  
+# LAPACK/BLAS for dsyev
 LIB=-llapack -lblas
 
+# Object file dependencies
 OBJ= hueckel.o  readinput.o writeresult.o writemolden.o global.o molecule.o
 
-
+# Link target: combine all objects with LAPACK/BLAS
 hueckel.x: $(OBJ)
 	$(FC) $(FOPT) -o $@ $(OBJ) $(LIB) 
 
+# Generic Fortran compilation; requires compiled module files
 %.o: %.f90 global.mod molecule.mod
 	$(FC)  $(FOPT) -c $<
 
+# molecule.mod depends on global.mod (uses 'use global')
 molecule.mod: molecule.f90 global.mod
 	$(FC) -c $<
 
+# global.mod has no module dependencies
 global.mod: global.f90
 	$(FC) -c $<
 
