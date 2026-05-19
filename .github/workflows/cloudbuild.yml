@@ -1,6 +1,0 @@
-on: push
-jobs:
-  steps:
-  - name: 'bash'
-    args: ['cd source && make']
-
